@@ -10,7 +10,7 @@ RUN go mod download
 
 COPY *.go ./
 
-RUN CGO_ENABLED=0 GOOS=linux go build -o /go
+RUN CGO_ENABLED=0 GOOS=linux go build -o main
 
 # Run the tests in the container
 FROM build-stage AS run-test-stage
@@ -21,7 +21,7 @@ FROM gcr.io/distroless/base-debian11 AS build-release-stage
 
 WORKDIR /
 
-COPY --from=build-stage /go /go
+COPY --from=build-stage /app/main /go
 
 EXPOSE 8080
 
