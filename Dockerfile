@@ -25,6 +25,6 @@ COPY --from=build-stage /go /go
 
 EXPOSE 8080
 
-USER nonroot:nonroot
+# USER nonroot:nonroot
 
 ENTRYPOINT ["/go"]
