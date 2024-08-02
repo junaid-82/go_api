@@ -11,10 +11,11 @@ func main() {
 	r := chi.NewRouter()
 
 	r.Use(middleware.Logger)
+
 	r.Get("/", func(w http.ResponseWriter, _ *http.Request) {
 		w.Write([]byte("Hello, Worrld!"))
 
 	})
-	http.ListenAndServe("localhost:8080")
+	http.ListenAndServe("localhost:8080", r)
 
 }
