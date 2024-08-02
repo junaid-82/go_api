@@ -6,6 +6,8 @@ FROM golang:1.22.5-alpine AS build-stage
 WORKDIR /app
 
 COPY go.mod ./
+COPY go.sum ./
+
 RUN go mod download
 
 COPY *.go ./
@@ -25,6 +27,6 @@ COPY --from=build-stage /app/main /go
 
 EXPOSE 8080
 
-# USER nonroot:nonroot
+USER nonroot:nonroot
 
 ENTRYPOINT ["/go"]
