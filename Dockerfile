@@ -27,6 +27,6 @@ COPY --from=build-stage /app/main /main
 
 EXPOSE 8080
 
-USER nonroot:nonroot
+# USER nonroot:nonroot
 
 ENTRYPOINT ["/main"]
