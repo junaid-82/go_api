@@ -19,7 +19,7 @@ FROM build-stage AS run-test-stage
 RUN go test -v ./...
 
 # Deploy the application binary into a lean image
-FROM debian:bookwork-slim AS build-release-stage
+FROM debian:bookworm-slim AS build-release-stage
 
 WORKDIR /
 
