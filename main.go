@@ -16,6 +16,6 @@ func main() {
 		w.Write([]byte("Hello, Worrld!"))
 
 	})
-	http.ListenAndServe("localhost:8080", r)
+	http.ListenAndServe("go.junaid.pk:8080", r)
 
 }
