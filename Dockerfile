@@ -25,7 +25,7 @@ WORKDIR /
 
 COPY --from=build-stage /app/main /main
 
-CMD ["/main", ">>", "/var/log/myapp.log"]
+CMD ["/bin/sh", "-c", "/main >> /var/log/myapp.log"]
 
 
 EXPOSE 8080
