@@ -25,6 +25,9 @@ WORKDIR /
 
 COPY --from=build-stage /app/main /main
 
+CMD ["/main", ">>", "/var/log/myapp.log"]
+
+
 EXPOSE 8080
 
 # USER nonroot:nonroot
